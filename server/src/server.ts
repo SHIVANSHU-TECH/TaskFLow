@@ -5,6 +5,7 @@ import cors from 'cors';
 import connectDB from './config/db';
 import authRoutes from './routes/authRoutes';
 import taskRoutes from './routes/taskRoutes';
+import { startCronJob } from './utils/cron';
 
 dotenv.config();
 
@@ -46,6 +47,7 @@ app.get('/', (req, res) => {
 const startServer = async () => {
   try {
     await connectDB();
+    startCronJob();
 
     app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
   } catch (error) {
