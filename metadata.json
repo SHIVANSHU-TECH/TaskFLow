@@ -1,0 +1,5 @@
+{
+  "name": "MERN Task Manager",
+  "description": "A full-stack task management application with JWT authentication, MongoDB, and Tailwind CSS.",
+  "requestFramePermissions": []
+}
