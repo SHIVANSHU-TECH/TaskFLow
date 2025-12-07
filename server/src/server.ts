@@ -23,7 +23,6 @@ app.use(cors({
 // Fix Cross-Origin-Opener-Policy for Firebase Google Auth Popups
 app.use((req, res, next) => {
   res.setHeader('Cross-Origin-Opener-Policy', 'same-origin-allow-popups');
-  res.setHeader('Cross-Origin-Embedder-Policy', 'require-corp');
   next();
 });
 
