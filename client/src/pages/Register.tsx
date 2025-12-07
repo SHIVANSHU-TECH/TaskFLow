@@ -35,7 +35,7 @@ const Register = () => {
     try {
       const result = await signInWithPopup(auth, googleProvider);
       const user = result.user;
-      
+
       if (user.email) {
         const data = await googleAuth({
           email: user.email,
@@ -46,8 +46,8 @@ const Register = () => {
         navigate('/');
       }
     } catch (err: any) {
-       console.error(err);
-       setError('Google Registration Failed');
+      console.error(err);
+      setError('Google Registration Failed');
     }
   };
 
@@ -55,39 +55,39 @@ const Register = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-900 relative overflow-hidden px-4 py-12 sm:px-6 lg:px-8">
-      
+
       {/* Background Decorative Blobs */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
-         <div className="absolute bottom-[-10%] left-[-10%] w-64 h-64 md:w-96 md:h-96 bg-pink-300/30 rounded-full blur-3xl opacity-50 mix-blend-multiply animate-bounce-short"></div>
-         <div className="absolute top-[-10%] right-[-10%] w-64 h-64 md:w-96 md:h-96 bg-indigo-300/30 rounded-full blur-3xl opacity-50 mix-blend-multiply animate-bounce-short" style={{ animationDelay: '1.5s' }}></div>
+        <div className="absolute bottom-[-10%] left-[-10%] w-64 h-64 md:w-96 md:h-96 bg-pink-300/30 rounded-full blur-3xl opacity-50 mix-blend-multiply animate-bounce-short"></div>
+        <div className="absolute top-[-10%] right-[-10%] w-64 h-64 md:w-96 md:h-96 bg-indigo-300/30 rounded-full blur-3xl opacity-50 mix-blend-multiply animate-bounce-short" style={{ animationDelay: '1.5s' }}></div>
       </div>
 
       {/* Success Popup */}
       {showSuccess && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm animate-fade-in px-4">
-           <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-2xl flex flex-col items-center animate-fade-in-up max-w-sm w-full">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4 text-green-600 shadow-sm">
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-slate-800">Account Created!</h3>
-              <p className="text-slate-500 mt-2 text-center text-sm">Redirecting you to Sign In...</p>
-           </div>
+          <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-2xl flex flex-col items-center animate-fade-in-up max-w-sm w-full">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4 text-green-600 shadow-sm">
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-bold text-slate-800">Account Created!</h3>
+            <p className="text-slate-500 mt-2 text-center text-sm">Redirecting you to Sign In...</p>
+          </div>
         </div>
       )}
 
       <div className="glass-card w-full max-w-md p-6 sm:p-8 rounded-2xl shadow-2xl z-10 animate-fade-in-up">
         <div className="text-center mb-6 sm:mb-8">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-indigo-600 text-white mb-4 shadow-lg shadow-indigo-500/30">
-                <FaUserPlus size={22} />
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white tracking-tight">Create Account</h2>
-            <p className="text-slate-500 mt-2 text-sm sm:text-base">Join TaskFlow today</p>
+          <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-indigo-600 text-white mb-4 shadow-lg shadow-indigo-500/30">
+            <FaUserPlus size={22} />
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-800 dark:text-white tracking-tight">Create Account</h2>
+          <p className="text-slate-500 mt-2 text-sm sm:text-base">Join TaskFlow today</p>
         </div>
 
         {error && <div className="bg-red-50 text-red-600 p-3 rounded-lg text-sm border border-red-100 mb-6">{error}</div>}
-        
+
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5 ml-1">Username</label>
@@ -122,8 +122,8 @@ const Register = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             className="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold shadow-lg shadow-indigo-200 hover:bg-indigo-700 hover:shadow-xl active:scale-95 transition-all duration-200 mt-2"
           >
             Create Account
@@ -131,15 +131,15 @@ const Register = () => {
         </form>
 
         <div className="relative my-6 sm:my-8">
-            <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-slate-200 dark:border-slate-600"></div>
-            </div>
-            <div className="relative flex justify-center text-sm">
-                <span className="px-4 bg-white dark:bg-slate-800 text-slate-400">Or sign up with</span>
-            </div>
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-slate-200 dark:border-slate-600"></div>
+          </div>
+          <div className="relative flex justify-center text-sm">
+            <span className="px-4 bg-white dark:bg-slate-800 text-slate-400">Or sign up with</span>
+          </div>
         </div>
 
-        <button 
+        <button
           type="button"
           onClick={handleGoogleRegister}
           className="w-full flex items-center justify-center gap-3 bg-white border border-slate-200 p-3 rounded-lg text-slate-700 font-medium hover:bg-slate-50 hover:border-slate-300 transition-all duration-200 dark:bg-slate-700 dark:border-slate-600 dark:text-white dark:hover:bg-slate-600"
